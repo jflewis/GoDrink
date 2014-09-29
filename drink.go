@@ -31,7 +31,7 @@ func main(){
 	done := make(chan string)
 	//producer
 	go serveBeer(ch)
-	//consumber
+	//consumer
 	go drinkBeer(ch,done)
 	waitForFinish  := <-done
 	fmt.Println("Grant is done now....", waitForFinish)
